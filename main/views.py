@@ -1,10 +1,9 @@
 import logging
 
 from flask import Blueprint, render_template, request
-from functions import search_for_posts, get_logger
-from config import LOG_PATH
+from functions import search_for_posts
 
-main_blueprint = Blueprint('main_blueprint', __name__)
+main_blueprint = Blueprint('main_blueprint', __name__, template_folder='templates')
 
 logger = logging.getLogger('main')
 

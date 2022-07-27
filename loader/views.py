@@ -18,7 +18,7 @@ def page_post_upload():
     post_content = request.form.get('content')
     uploaded_file = request.files.get('picture')
 
-    if uploaded_file is None or post_content is None:
+    if not uploaded_file or post_content:
         return 'Ошибка загрузки: прикрепите картинку и введите текст'
 
     if not is_picture(uploaded_file):
